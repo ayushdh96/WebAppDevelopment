@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basketball Fun Facts</title>
+  <!-- Link to the compiled CSS (generated from SCSS) -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Welcome to the World of Basketball</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        <section class="hero-section">
+            <h2>Why Basketball is Amazing</h2>
+            <p>Basketball is one of the most popular sports worldwide, known for its fast pace and incredible athleticism.
+                People all over the world enjoy playing and watching basketball. It is a sport that can be played by people of all ages and skill levels.
+            </p>
+            <!-- Keep your inline style, but add a class for SCSS targeting -->
+            <img src="basketballoncourt.avif" alt="A basketball on a court"
+                 style="width: 300px; height: auto;"
+                 class="court-image">
+        </section>
+
+        <section class="heat-big-3">
+            <h3>Miami Heat Big 3</h3>
+            <p>The Miami Heat Big 3 was a legendary trio of players that included LeBron James, Dwyane Wade, and Chris Bosh. They are what modernized the NBA and is the reason for star pivot from one team to another and formation of superteams.
+                Here is a vedio of their frist time 
+            </p>
+            <video controls width="600">
+                <source src="iZAJKjsB.mp4" type="video/mp4" />
+                Your browser does not support the video tag. You can download the video 
+                <a href="https://vlipsy.com/vlip/lebron-james-not-2-not-3-iZAJKjsB">here</a>.
+            </video>
+        </section>
+
+        <section class="top-players">
+            <h3>Top NBA Players</h3>
+            <ul>
+                <li>Michael Jordan</li>
+                <li>LeBron James</li>
+                <li>Kobe Bryant</li>
+                <li>Stephen Curry</li>
+            </ul>
+        </section>
+
+        <section class="contact-us">
+            <h3>Contact Us</h3>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="learn-more">
+            <h3>Learn More</h3>
+            <p>Check out the <a href="https://www.nba.com" target="_blank">official NBA website</a> for more information.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Basketball Fanatics</p>
+    </footer>
+</body>
+</html>

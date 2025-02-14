@@ -1,0 +1,205 @@
+// style.scss
+
+@use 'variables' as vars;
+@use 'mixins';
+
+/* 1) BASIC RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2) BODY */
+body {
+  font-family: Arial, sans-serif;
+  background-color: vars.$light-bg;
+  color: vars.$dark-text;
+  font-size: vars.$base-font-size;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* 3) HEADER */
+.site-header {
+  background-color: vars.$primary-color;
+  padding: vars.$base-padding;
+  margin-bottom: vars.$base-margin;
+
+  h1 {
+    font-size: vars.$heading-font-size;
+    color: #fff;
+  }
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+
+  @include mixins.transition(color, 0.3s);
+
+  &:hover {
+    color: vars.$secondary-color;
+  }
+}
+
+/* 4) MAIN */
+.site-main {
+  padding: vars.$base-padding;
+}
+
+/* ----------------------
+   STYLES for index.html
+   ---------------------- */
+
+/* 4.1 HERO SECTION (FADE-IN) */
+.hero-section {
+  @include mixins.fade-in(1.2s, 0.2s); // Second animation
+  margin-bottom: vars.$base-margin;
+
+  h2 {
+    font-size: vars.$subheading-font-size;
+    color: vars.$primary-color;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+/* 4.2 MIAMI HEAT BIG 3 */
+.heat-big-3 {
+  margin-bottom: vars.$base-margin;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: vars.$base-padding;
+
+  video {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1rem;
+  }
+}
+
+/* 4.3 TOP PLAYERS */
+.top-players {
+  margin-bottom: vars.$base-margin;
+}
+
+/* 4.4 CONTACT US (BOUNCE on SUBMIT Button) */
+.contact-us {
+  background-color: #f9f9f9;
+  padding: vars.$base-padding;
+  margin-bottom: vars.$base-margin;
+  border-radius: vars.$border-radius;
+
+  label {
+    display: inline-block;
+    width: 60px;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 0.5rem;
+    padding: 0.25rem;
+    width: 200px;
+  }
+
+  button {
+    background-color: vars.$secondary-color;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: vars.$border-radius;
+    cursor: pointer;
+
+    /* First animation: bounce on hover */
+    @include mixins.hover-bounce;
+
+    @include mixins.transition(background-color, 0.3s);
+
+    &:hover {
+      /* If you prefer an approach with color-adjust:
+         background-color: color.adjust(vars.$secondary-color, $lightness: -10%);
+       */
+      background-color: darken(vars.$secondary-color, 10%);
+    }
+  }
+}
+
+/* 4.5 LEARN MORE */
+.learn-more {
+  margin-bottom: vars.$base-margin;
+
+  a {
+    color: vars.$primary-color;
+    @include mixins.transition(color, 0.3s);
+
+    &:hover {
+      color: vars.$secondary-color;
+    }
+  }
+}
+
+/* -------------------------
+   STYLES for history.html
+   ------------------------- */
+
+/* 5.1 BEGINNINGS SECTION */
+.beginnings {
+  margin-bottom: vars.$base-margin;
+}
+
+/* 5.2 KEY MILESTONES SECTION */
+.key-milestones {
+  margin-bottom: vars.$base-margin;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: vars.$secondary-color;
+      color: #fff;
+    }
+  }
+}
+
+/* 5.3 FAMOUS QUOTE SECTION */
+.famous-quote {
+  margin-bottom: vars.$base-margin;
+
+  blockquote {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid vars.$primary-color;
+    font-style: italic;
+  }
+}
+
+/* 6) FOOTER */
+.site-footer {
+  background-color: vars.$primary-color;
+  padding: vars.$base-padding;
+  margin-top: vars.$base-margin;
+
+  p {
+    text-align: center;
+    color: #fff;
+  }
+}
